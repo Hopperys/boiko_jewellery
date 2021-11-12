@@ -1,0 +1,173 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter__item {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  border: 1px solid $brown;
+  box-sizing: border-box;
+  color: $dark;
+
+  &--opened {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 10px;
+      right: 25px;
+      top: 30px;
+      background: url("../img/up.svg") no-repeat;
+    }
+  }
+
+  &--closed {
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 10px;
+      right: 25px;
+      top: 30px;
+      background: url("../img/down.svg") no-repeat;
+    }
+  }
+}
+
+.filter__item--closed label {
+  display: none;
+}
+
+.filter__item--closed .filter__controls,
+.filter__item--closed .filter__range {
+  display: none;
+}
+
+.filter__item h3 {
+  margin-left: 25px;
+  margin-top: 28px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.filter__item--opened h3 {
+  cursor: pointer;
+}
+
+.filter__item label {
+  margin-left: 60px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 15px;
+}
+
+.filter__item input {
+  display: none;
+}
+
+.filter__item input:checked ~ span {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 0;
+    left: -25px;
+    background-color: $brown;
+  }
+}
+
+.filter__item input ~ span {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 0;
+    left: -25px;
+    border: 1px solid $brown;
+    box-sizing: border-box;
+  }
+}
+
+.filter__controls {
+  display: flex;
+}
+
+.filter__scale {
+  width: 200px;
+  height: 1px;
+  background-color: $desert;
+  margin-left: 25px;
+}
+
+.filter__bar {
+  width: 90px;
+  height: 1px;
+  background-color: $brown;
+  margin-left: 60px;
+}
+
+.filter__toggle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: $brown;
+  margin-top: -6px;
+
+  &--min {
+    margin-left: -150px;
+  }
+
+  &--max {
+    margin-left: 80px;
+  }
+}
+
+.filter__range span {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  margin-left: 63px;
+}
+
+.filter__submit {
+  width: 250px;
+  height: 68px;
+  background-color: $brown;
+  color: $white;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  border: none;
+  cursor: pointer;
+  margin-top: 35px;
+  font-family: "Poppins", "Arial", sans-serif;
+}
+
+.filter__clear {
+  width: 250px;
+  height: 68px;
+  background-color: $white;
+  border: 1px solid $brown;
+  box-sizing: border-box;
+  margin-top: 25px;
+  color: $dark;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  font-family: "Poppins", "Arial", sans-serif;
+}

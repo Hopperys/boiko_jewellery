@@ -1,0 +1,105 @@
+.page-main {
+  &--catalog {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.page-main__wrapper {
+  display: grid;
+  grid-template-columns: 250px auto;
+  grid-template-rows: auto;
+  column-gap: 50px;
+  margin-left: 20%;
+
+  @media (max-width: 1800px) {
+    margin-left: 15%;
+  }
+
+  @media (max-width: 1600px) {
+    margin-left: 10%;
+  }
+
+  @media (max-width: 1337px) {
+    margin-left: 7.5%;
+  }
+}
+
+.page-main__header {
+  background: url("../img/bg-desctop.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: $brown;
+  color: $white;
+  text-align: center;
+
+  &--catalog {
+    background: url("../img/bg-catalog.jpg") no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-color: $brown;
+    margin-bottom: 80px;
+  }
+
+  @media (max-width: $tablet) {
+    background: url("../img/bg-tablet.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: $brown;
+  }
+
+  @media (max-width: $mobile) {
+    background: url("../img/bg-mobile.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: $brown;
+  }
+}
+
+.page-main__header h1 {
+  padding-top: 195px;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 58px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  letter-spacing: 0.03em;
+
+  @media (max-width: $tablet) {
+    margin-top: 0;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 38px;
+    line-height: 49px;
+  }
+}
+
+.page-main__header p {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 49px;
+  margin-top: 0;
+  padding-bottom: 194px;
+
+  @media (max-width: $mobile) {
+    font-size: 34px;
+    line-height: 44px;
+  }
+}
+
+.page-main__header--catalog h1 {
+  font-size: 34px;
+  line-height: 44px;
+  padding-top: 102px;
+}
+
+.page-main__header--catalog p {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 29px;
+  padding-bottom: 102px;
+}

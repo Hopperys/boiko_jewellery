@@ -1,0 +1,119 @@
+.slider {
+  max-width: 1336px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slider__shop {
+  text-align: center;
+  color: $dark;
+
+  @media (max-width: $mobile) {
+    margin-top: 70px;
+  }
+}
+
+.slider__shop h2 {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 44px;
+  margin-top: -30px;
+}
+
+.slider__shop a:first-of-type {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  border-bottom: 1px solid $brown;
+  margin-bottom: 70px;
+}
+
+.slider a {
+  text-decoration: none;
+  text-align: center;
+  color: $dark;
+}
+
+.slider__boxes h3 {
+  margin-left: -20px;
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+.slider__boxes p {
+  margin-left: -20px;
+}
+
+.slider__boxes img {
+  @media (max-width: $tablet) {
+    width: 324px;
+    height: 340px;
+  }
+
+  @media (max-width: $mobile) {
+    width: 130px;
+    height: 136px;
+  }
+}
+
+.slider__arrows {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 150px;
+  margin-left: 100px;
+  margin-right: 100px;
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.slider__arrows button {
+  border: none;
+  background-color: $white;
+  cursor: pointer;
+}
+
+.slider__right svg {
+  stroke: $brown;
+}
+
+.slick-list {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.said-dots {
+  @include list-reset;
+  display: flex;
+  max-width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.said-dots li > button {
+  border: none;
+  background-color: $white;
+  font-family: "Poppins", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: $grey;
+}
+
+.said-dots .slick-active > button {
+  color: $dark;
+}
+
+.slider__pages {
+  display: none;
+
+  @media (max-width: $mobile) {
+    display: inline-block;
+  }
+}
