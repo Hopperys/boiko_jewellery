@@ -1,0 +1,151 @@
+.popup {
+  display: flex;
+  flex-direction: column;
+  width: 430px;
+  background-color: $desert;
+  position: fixed;
+  top: 300px;
+  left: 50%;
+  right: -50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  &--closed {
+    display: none;
+  }
+
+  &--opened {
+    display: flex;
+  }
+}
+
+.popup img {
+  display: block;
+  width: 430px;
+  height: 138px;
+}
+
+.popup h2 {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 44px;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 40px;
+}
+
+.popup form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup label {
+  width: 340px;
+}
+
+.popup input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid $dark;
+  padding-bottom: 10px;
+  background-color: $desert;
+  margin-left: 45px;
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  font-family: "Poppins", "Arial", sans-serif;
+
+  &::placeholder {
+    color: $grey;
+  }
+}
+
+.popup form > a {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: $grey;
+  text-decoration: none;
+  margin-right: 40px;
+  margin-top: 5px;
+  text-align: right;
+}
+
+.popup form > button {
+  width: 340px;
+  height: 68px;
+  background-color: $brown;
+  border: none;
+  color: $white;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  font-family: "Poppins", "Arial", sans-serif;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    background-color: $dark;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.popup__inner {
+  margin-left: 100px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  font-weight: 500;
+}
+
+.popup__inner p {
+  color: $grey;
+  margin-top: 0;
+  margin-right: 5px;
+}
+
+.popup__inner a {
+  text-decoration: none;
+  color: $dark;
+}
+
+.popup__close {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.popup a {
+  &:hover,
+  &:focus {
+    color: $brown;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}

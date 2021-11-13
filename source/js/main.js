@@ -104,17 +104,54 @@
   var burger = document.querySelector('.page-header__burger');
 
   if (document.contains(pageHeader)) {
-    var headerClassToggle = function () {
-      pageHeader.classList.toggle('page-header--opened');
-      pageHeader.classList.toggle('page-header--closed');
-    };
-
-    headerClassToggle();
+    pageHeader.classList.remove('page-header--nojs');
+    pageHeader.classList.add('page-header--closed');
 
     if (pageHeader.contains(burger)) {
       burger.addEventListener('click', function () {
-        headerClassToggle();
+        pageHeader.classList.toggle('page-header--opened');
+        pageHeader.classList.toggle('page-header--closed');
+        document.body.classList.toggle('page-body--menu');
       });
     }
+  }
+})();
+
+(function () {
+  var loginButton = document.querySelector('.page-header__login');
+  var popup = document.querySelector('.popup');
+  var closeButton = document.querySelector('.popup__close');
+
+  if (document.contains(loginButton && popup)) {
+    var popupClassToggle = function () {
+      popup.classList.toggle('popup--opened');
+      popup.classList.toggle('popup--closed');
+    };
+
+    var popupKeydownHandler = function (evt) {
+      if (evt.key === 'Escape' || evt.key === 'Esc') {
+        popupClassToggle();
+        document.removeEventListener('keydown', popupKeydownHandler);
+      }
+    };
+
+    var closeClickHandler = function (evt) {
+      if (!popup.contains(evt.target) && evt.target !== loginButton && popup.classList.contains('popup--opened')) {
+        popupClassToggle();
+        document.removeEventListener('click', closeClickHandler);
+      }
+    };
+
+    loginButton.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      popupClassToggle();
+
+      document.addEventListener('keydown', popupKeydownHandler);
+      document.addEventListener('click', closeClickHandler);
+    });
+
+    closeButton.addEventListener('click', function () {
+      popupClassToggle();
+    });
   }
 })();

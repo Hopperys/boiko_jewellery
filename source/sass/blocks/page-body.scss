@@ -5,4 +5,11 @@
   line-height: 24px;
   height: 100%;
   margin: 0;
+
+  &--menu {
+    @media (max-width: $tablet) {
+      overflow: hidden;
+      pointer-events: none;
+    }
+  }
 }
