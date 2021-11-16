@@ -23,19 +23,24 @@
   @media (max-width: 1337px) {
     margin-left: 7.5%;
   }
+
+  @media (max-width: $tablet) {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+  }
 }
 
 .page-main__header {
   background: url("../img/bg-desctop.jpg") no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   background-color: $brown;
   color: $white;
-  text-align: center;
 
   &--catalog {
     background: url("../img/bg-catalog.jpg") no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: center;
     background-color: $brown;
     margin-bottom: 80px;
@@ -46,6 +51,14 @@
     background-size: cover;
     background-position: center;
     background-color: $brown;
+
+    &--catalog {
+      background: url("../img/bg-catalog-tablet.jpg") no-repeat;
+      background-size: 100%;
+      background-position: center;
+      background-color: $brown;
+      margin-bottom: 50px;
+    }
   }
 
   @media (max-width: $mobile) {
@@ -57,7 +70,7 @@
 }
 
 .page-main__header h1 {
-  padding-top: 195px;
+  padding-top: 184px;
   font-family: "Cormorant Garamond", "Times New Roman", serif;
   font-weight: 700;
   font-size: 45px;
@@ -65,9 +78,13 @@
   text-transform: uppercase;
   margin-bottom: 0;
   letter-spacing: 0.03em;
+  margin-top: 16px;
+  margin-left: 40.42%;
 
   @media (max-width: $tablet) {
     margin-top: 0;
+    margin-left: -14px;
+    text-align: center;
   }
 
   @media (max-width: $mobile) {
@@ -82,8 +99,15 @@
   font-weight: 400;
   font-size: 38px;
   line-height: 49px;
-  margin-top: 0;
-  padding-bottom: 194px;
+  margin-top: -5px;
+  padding-bottom: 179px;
+  margin-left: 42.58%;
+
+  @media (max-width: $tablet) {
+    text-align: center;
+    margin-left: -14px;
+    padding-bottom: 177px;
+  }
 
   @media (max-width: $mobile) {
     font-size: 34px;

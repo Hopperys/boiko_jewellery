@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 570px 570px;
   grid-template-rows: min-content min-content min-content;
-  column-gap: 30px;
+  column-gap: 44px;
   row-gap: 30px;
   max-width: 1170px;
   margin-left: auto;
@@ -14,6 +14,7 @@
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
+    row-gap: 50px;
   }
 
   @media (max-width: $mobile) {
@@ -27,16 +28,28 @@
   text-align: center;
   grid-column: 1/-1;
   grid-row: 1/2;
+  margin-bottom: 31px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 15px;
+  }
 }
 
 .blog h2 {
-  margin-top: 120px;
+  margin-top: 114px;
+  margin-left: 28px;
   text-align: center;
   letter-spacing: 0.03em;
   font-family: "Cormorant Garamond", "Times New Roman", serif;
   font-weight: 700;
   font-size: 34px;
   line-height: 44px;
+  margin-bottom: 0;
+
+  @media (max-width: $tablet) {
+    margin-top: 60px;
+    margin-left: 0;
+  }
 }
 
 .blog a {
@@ -52,6 +65,29 @@
   }
 }
 
+.blog a:first-of-type {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 26px;
+  margin-top: 19px;
+
+  @media (max-width: $tablet) {
+    margin-left: 0;
+  }
+}
+
+.blog .blog__care > a,
+.blog .blog__inner > a,
+.blog .blog__power > a {
+  margin-top: 8px;
+  margin-left: 8px;
+
+  @media (max-width: $tablet) {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+}
+
 .blog__care,
 .blog__power {
   display: grid;
@@ -59,9 +95,12 @@
   width: 570px;
   background-color: $desert;
   text-align: center;
+  margin-left: 14px;
 
   @media (max-width: $tablet) {
     width: 678px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @media (max-width: $mobile) {
@@ -97,6 +136,7 @@
   max-width: 163px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0;
 }
 
 .blog__power {
@@ -108,6 +148,7 @@
   max-width: 92px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0;
 }
 
 
@@ -146,7 +187,7 @@
 .blog__trends a {
   display: inline-block;
   vertical-align: middle;
-  margin-bottom: 103px;
+  margin-bottom: 90px;
 }
 
 .blog__inner p {
@@ -155,6 +196,10 @@
   font-size: 14px;
   line-height: 18px;
   color: $grey;
+
+  @media (max-width: $tablet) {
+    margin-top: 67px;
+  }
 
   @media (max-width: $mobile) {
     margin-top: 49px;
@@ -166,4 +211,13 @@
   font-size: 26px;
   line-height: 34px;
   font-family: "Cormorant Garamond", "Times New Roman", serif;
+  margin-top: 0;
+}
+
+.blog__trends p {
+  margin-top: 71px;
+
+  @media (max-width: $tablet) {
+    margin-top: 85px;
+  }
 }

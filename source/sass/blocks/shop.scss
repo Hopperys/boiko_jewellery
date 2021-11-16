@@ -5,11 +5,26 @@
   row-gap: 40px;
   column-gap: 25px;
   text-align: center;
+
+  @media (max-width: $tablet) {
+    grid-template-columns: 260px 260px 260px;
+    column-gap: 30px;
+  }
 }
 
 .shop__wrapper a {
   text-decoration: none;
   color: $dark;
+}
+
+.shop__wrapper img {
+  width: 270px;
+  height: 272px;
+
+  @media (max-width: $tablet) {
+    width: 206px;
+    height: 208px;
+  }
 }
 
 .shop__wrapper h3 {

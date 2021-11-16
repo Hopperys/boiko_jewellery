@@ -120,7 +120,8 @@
 (function () {
   var loginButton = document.querySelector('.page-header__login');
   var popup = document.querySelector('.popup');
-  var closeButton = document.querySelector('.popup__close');
+  var closeButton = popup.querySelector('.popup__close');
+  var emailInput = popup.querySelector('#popupEmail');
 
   if (document.contains(loginButton && popup)) {
     var popupClassToggle = function () {
@@ -145,6 +146,7 @@
     loginButton.addEventListener('click', function (evt) {
       evt.preventDefault();
       popupClassToggle();
+      emailInput.focus();
 
       document.addEventListener('keydown', popupKeydownHandler);
       document.addEventListener('click', closeClickHandler);

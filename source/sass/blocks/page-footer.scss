@@ -16,6 +16,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto;
     margin-left: 45px;
+    padding-bottom: 32px;
   }
 
   @media (max-width: $mobile) {
@@ -30,7 +31,12 @@
 .page-footer__links {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 94px;
+
+  @media (max-width: $tablet) {
+    margin-top: 45px;
+    margin-left: 15px;
+  }
 
   @media (max-width: $mobile) {
     margin-top: 30px;
@@ -41,7 +47,7 @@
 .page-footer__links a {
   color: $white;
   line-height: 21px;
-  margin-bottom: 30px;
+  margin-bottom: 21px;
   text-decoration: none;
 
   @media (max-width: $mobile) {
@@ -59,7 +65,22 @@
   }
 }
 
+.page-footer__links:nth-child(2n) {
+  margin-left: 40px;
+
+  @media (max-width: $tablet) {
+    margin-left: 0;
+  }
+}
+
 .page-footer__links:last-child {
+  margin-right: -35px;
+
+  @media (max-width: $tablet) {
+    margin-right: 0;
+    margin-left: -25px;
+  }
+
   @media (max-width: $mobile) {
     display: flex;
     flex-direction: row;

@@ -17,12 +17,43 @@
   &--opened {
     display: flex;
   }
+
+  @media (max-width: $tablet) {
+    width: 442px;
+    top: 100px;
+    pointer-events: auto;
+  }
+
+  @media (max-width: $mobile) {
+    width: 270px;
+    top: 50px;
+    pointer-events: auto;
+  }
+
+  &--main  {
+    position: static;
+    margin: 100px -50% 100px 50%;
+    width: 430px;
+
+    @media (max-width: $mobile) {
+      width: 270px;
+    }
+  }
 }
 
 .popup img {
   display: block;
   width: 430px;
   height: 138px;
+
+  @media (max-width: $tablet) {
+    width: 442px;
+  }
+
+  @media (max-width: $mobile) {
+    width: 270px;
+    height: 84px;
+  }
 }
 
 .popup h2 {
@@ -33,6 +64,12 @@
   text-align: center;
   margin-bottom: 5px;
   margin-top: 40px;
+
+  @media (max-width: $mobile) {
+    margin-top: 25px;
+    font-size: 24px;
+    line-height: 31px;
+  }
 }
 
 .popup form {
@@ -42,6 +79,10 @@
 
 .popup label {
   width: 340px;
+
+  @media (max-width: $mobile) {
+    width: 240px;
+  }
 }
 
 .popup input {
@@ -60,6 +101,14 @@
   &::placeholder {
     color: $grey;
   }
+
+  @media (max-width: $tablet) {
+    margin-left: 50px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-left: 15px;
+  }
 }
 
 .popup form > a {
@@ -71,6 +120,14 @@
   margin-right: 40px;
   margin-top: 5px;
   text-align: right;
+
+  @media (max-width: $tablet) {
+    margin-right: 50px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-right: 14px;
+  }
 }
 
 .popup form > button {
@@ -96,6 +153,10 @@
   &:active {
     opacity: 0.7;
   }
+
+  @media (max-width: $mobile) {
+    width: 240px;
+  }
 }
 
 .popup__inner {
@@ -106,6 +167,14 @@
   line-height: 21px;
   display: flex;
   font-weight: 500;
+
+  @media (max-width: $tablet) {
+    margin-left: 100px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-left: 23px;
+  }
 }
 
 .popup__inner p {
