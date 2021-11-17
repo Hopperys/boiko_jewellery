@@ -21,7 +21,7 @@
   }
 
   @media (max-width: 1337px) {
-    margin-left: 7.5%;
+    margin-left: 5%;
   }
 
   @media (max-width: $tablet) {
@@ -38,12 +38,22 @@
   background-color: $brown;
   color: $white;
 
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/bg-desctop@2x.jpg");
+    background-color: $brown;
+  }
+
   &--catalog {
     background: url("../img/bg-catalog.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     background-color: $brown;
     margin-bottom: 80px;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/bg-catalog@2x.jpg");
+      background-color: $brown;
+    }
   }
 
   @media (max-width: $tablet) {
@@ -52,12 +62,22 @@
     background-position: center;
     background-color: $brown;
 
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/bg-tablet@2x.jpg");
+      background-color: $brown;
+    }
+
     &--catalog {
       background: url("../img/bg-catalog-tablet.jpg") no-repeat;
       background-size: 100%;
       background-position: center;
       background-color: $brown;
       margin-bottom: 50px;
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/bg-catalog-tablet@2x.jpg");
+        background-color: $brown;
+      }
     }
   }
 
@@ -66,6 +86,11 @@
     background-size: cover;
     background-position: center;
     background-color: $brown;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/bg-mobile@2x.jpg");
+      background-color: $brown;
+    }
   }
 }
 
@@ -90,6 +115,8 @@
   @media (max-width: $mobile) {
     font-size: 38px;
     line-height: 49px;
+    margin-left: 0;
+    padding-top: 190px;
   }
 }
 
@@ -112,6 +139,8 @@
   @media (max-width: $mobile) {
     font-size: 34px;
     line-height: 44px;
+    margin-left: 0;
+    padding-bottom: 185px;
   }
 }
 

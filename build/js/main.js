@@ -157,3 +157,44 @@
     });
   }
 })();
+
+(function () {
+  var filter = document.querySelector('.filter');
+  var filterButton = filter.querySelector('.filter__show');
+  var filterClose = filter.querySelector('.filter__close');
+  var submitButton = filter.querySelector('.filter__submit');
+  var filterForm = filter.querySelector('.filter form');
+
+  if (document.contains(filter && filterButton)) {
+    var popupKeydownHandler = function (evt) {
+      if (evt.key === 'Escape' || evt.key === 'Esc') {
+        filter.classList.remove('filter--opened');
+        document.removeEventListener('keydown', popupKeydownHandler);
+      }
+    };
+
+    var closeClickHandler = function (evt) {
+      if (!filter.contains(evt.target) && evt.target !== filterButton && filter.classList.contains('filter--opened')) {
+        filter.classList.remove('filter--opened');
+        document.removeEventListener('click', closeClickHandler);
+      }
+    };
+
+    filterButton.addEventListener('click', function () {
+      filter.classList.add('filter--opened');
+
+      document.addEventListener('keydown', popupKeydownHandler);
+      document.addEventListener('click', closeClickHandler);
+    });
+
+    filterClose.addEventListener('click', function () {
+      filter.classList.remove('filter--opened');
+    });
+
+    submitButton.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      filter.classList.remove('filter--opened');
+      filterForm.submit();
+    });
+  }
+})();

@@ -26,6 +26,10 @@
     text-align: center;
     margin-bottom: 20px;
   }
+
+  @media (max-width: $mobile) {
+    margin-top: -10px;
+  }
 }
 
 .slider__shop a:first-of-type {
@@ -42,6 +46,10 @@
     text-align: center;
     margin-bottom: 55px;
   }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 44px;
+  }
 }
 
 .slider a {
@@ -53,6 +61,10 @@
   @media (max-width: $tablet) {
     margin-left: 28px;
   }
+
+  @media (max-width: $mobile) {
+    margin-left: 0;
+  }
 }
 
 .slider__boxes {
@@ -61,11 +73,23 @@
   @media (max-width: $tablet) {
     margin-left: 10px;
   }
+
+  @media (max-width: $mobile) {
+    max-height: 290px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -5px;
+  }
 }
 
 .slider__boxes a:nth-of-type(2n) {
   @media (max-width: $tablet) {
     margin-left: 30px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-right: 0px;
+    margin-left: 0px;
   }
 }
 
@@ -83,6 +107,8 @@
   @media (max-width: $mobile) {
     font-size: 16px;
     line-height: 21px;
+    margin-left: -10px;
+    margin-top: 16px;
   }
 }
 
@@ -95,9 +121,26 @@
   @media (max-width: $tablet) {
     margin-left: 10px;
   }
+
+  @media (max-width: $mobile) {
+    margin-left: -10px;
+  }
 }
 
 .slider__boxes img {
+  width: 270px;
+  height: 284px;
+
+  @media (max-width: 1240px) {
+    width: 220px;
+    height: 254px;
+  }
+
+  @media (max-width: 1170px) {
+    width: 200px;
+    height: 234px;
+  }
+
   @media (max-width: $tablet) {
     width: 324px;
     height: 340px;
@@ -184,5 +227,8 @@
 
   @media (max-width: $mobile) {
     display: inline-block;
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 500;
   }
 }

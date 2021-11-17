@@ -6,9 +6,19 @@
   column-gap: 25px;
   text-align: center;
 
+  @media (max-width: 1255px) {
+    grid-template-columns: 200px 200px 200px;
+  }
+
   @media (max-width: $tablet) {
-    grid-template-columns: 260px 260px 260px;
+    grid-template-columns: 206px 206px 206px;
     column-gap: 30px;
+    justify-content: center;
+  }
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 130px 130px;
+    grid-template-rows: auto auto auto auto auto auto;
   }
 }
 
@@ -21,9 +31,19 @@
   width: 270px;
   height: 272px;
 
+  @media (max-width: 1255px) {
+    width: 200px;
+    height: 202px;
+  }
+
   @media (max-width: $tablet) {
     width: 206px;
     height: 208px;
+  }
+
+  @media (max-width: $mobile) {
+    width: 130px;
+    height: 136px;
   }
 }
 
