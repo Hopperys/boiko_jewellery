@@ -11,6 +11,17 @@
   grid-template-rows: auto;
   column-gap: 50px;
   margin-left: 20%;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 120%;
+    height: 1px;
+    background-color: $light-grey;
+    bottom: 162px;
+    left: -20%;
+  }
 
   @media (max-width: 1800px) {
     margin-left: 15%;
@@ -21,13 +32,27 @@
   }
 
   @media (max-width: 1337px) {
-    margin-left: 5%;
+    margin-left: 98px;
+  }
+
+  @media (max-width: 1080px) {
+    margin-left: 45px;
   }
 
   @media (max-width: $tablet) {
     display: flex;
     flex-direction: column;
     margin-left: 0;
+
+    &::after {
+      bottom: 132px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &::after {
+      display: none;
+    }
   }
 }
 
@@ -49,6 +74,7 @@
     background-position: center;
     background-color: $brown;
     margin-bottom: 80px;
+    margin-top: 18px;
 
     @media (min-resolution: 2dppx) {
       background-image: url("../img/bg-catalog@2x.jpg");
@@ -73,6 +99,7 @@
       background-position: center;
       background-color: $brown;
       margin-bottom: 50px;
+      margin-top: 0;
 
       @media (min-resolution: 2dppx) {
         background-image: url("../img/bg-catalog-tablet@2x.jpg");
@@ -90,6 +117,19 @@
     @media (min-resolution: 2dppx) {
       background-image: url("../img/bg-mobile@2x.jpg");
       background-color: $brown;
+    }
+
+    &--catalog {
+      background: url("../img/bg-catalog-mobile.jpg");
+      background-color: $brown;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 40px;
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/bg-catalog-mobile@2x.jpg");
+        background-color: $brown;
+      }
     }
   }
 }
@@ -147,12 +187,39 @@
 .page-main__header--catalog h1 {
   font-size: 34px;
   line-height: 44px;
-  padding-top: 102px;
+  padding-top: 77px;
+  padding-left: 18px;
+  letter-spacing: 0;
+
+  @media (max-width: $tablet) {
+    padding-top: 92px;
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: 80px;
+    padding-left: 0;
+  }
 }
 
 .page-main__header--catalog p {
   font-weight: 500;
   font-size: 22px;
   line-height: 29px;
-  padding-bottom: 102px;
+  padding-bottom: 70px;
+  margin-top: 2px;
+  margin-left: 37px;
+  text-align: center;
+
+  @media (max-width: $tablet) {
+    margin-left: 0;
+    padding-bottom: 72px;
+  }
+
+  @media (max-width: $mobile) {
+    width: 77.18%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 26px;
+    padding-bottom: 61px;
+  }
 }

@@ -380,8 +380,7 @@
     </button>
   </section>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script type="text/javascript" src="js/vendor.js"></script>
   <script>
     $(function () {
       var SLIDES_TO_SHOW = 6;
@@ -395,10 +394,10 @@
         infinite: true,
         slidesToShow: 4,
         slidesToScroll: 4,
-        dotsClass: 'said-dots',
         prevArrow: $('.slider__left'),
         nextArrow: $('.slider__right'),
         dots: true,
+        dotsClass: 'said-dots',
         swipe: false,
         responsive: [
           {

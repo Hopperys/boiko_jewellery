@@ -32,14 +32,14 @@
   }
 }
 
-.slider__shop a:first-of-type {
+.slider__shop > a {
   display: inline-block;
   vertical-align: middle;
   font-weight: 500;
   font-size: 16px;
   line-height: 130%;
   border-bottom: 1px solid $brown;
-  margin-bottom: 70px;
+  margin-bottom: 58px;
 
   @media (max-width: $tablet) {
     margin-left: 0;
@@ -58,6 +58,15 @@
   color: $dark;
   margin-left: 30px;
 
+  &:focus,
+  &:hover {
+    color: $brown;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
   @media (max-width: $tablet) {
     margin-left: 28px;
   }
@@ -71,7 +80,7 @@
   margin-left: 0;
 
   @media (max-width: $tablet) {
-    margin-left: 10px;
+    margin-left: -20px;
   }
 
   @media (max-width: $mobile) {
@@ -88,8 +97,8 @@
   }
 
   @media (max-width: $mobile) {
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
@@ -99,9 +108,10 @@
   font-size: 16px;
   line-height: 21px;
   margin-bottom: 0;
+  margin-left: -30px;
 
   @media (max-width: $tablet) {
-    margin-left: 18px;
+    margin-left: -18px;
   }
 
   @media (max-width: $mobile) {
@@ -117,9 +127,10 @@
   font-size: 14px;
   line-height: 18px;
   margin-top: 6px;
+  margin-left: -35px;
 
   @media (max-width: $tablet) {
-    margin-left: 10px;
+    margin-left: -35px;
   }
 
   @media (max-width: $mobile) {
@@ -173,6 +184,16 @@
 .slider__arrows svg {
   width: 29px;
   height: 9px;
+  stroke: $brown;
+
+  &:focus,
+  &:hover {
+    stroke: $dark;
+  }
+
+  &:active {
+    fill: 0.6;
+  }
 
   @media (max-width: $tablet) {
     width: 36px;
@@ -195,40 +216,13 @@
   margin-right: 5%;
 }
 
-.said-dots {
-  @include list-reset;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: -22px;
-  margin-left: 30px;
-
-  @media (max-width: $tablet) {
-    margin-top: -30px;
-    margin-left: -15px;
-  }
-}
-
-.said-dots li > button {
-  border: none;
-  background-color: $white;
-  font-family: "Poppins", "Arial", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: $grey;
-}
-
-.said-dots .slick-active > button {
-  color: $dark;
-}
-
 .slider__pages {
   display: none;
 
   @media (max-width: $mobile) {
     display: inline-block;
-    margin-top: 0;
-    font-size: 16px;
+    margin-top: 21px;
+    font-size: 18px;
     font-weight: 500;
   }
 }

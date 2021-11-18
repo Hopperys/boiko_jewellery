@@ -50,6 +50,15 @@
   margin-bottom: 21px;
   text-decoration: none;
 
+  &:focus,
+  &:hover {
+    color: $brown;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+
   @media (max-width: $mobile) {
     margin-bottom: 20px;
   }
@@ -57,12 +66,18 @@
 
 .page-footer__links a > svg {
   margin-right: 15px;
+  fill: $white;
 
   @media (max-width: $mobile) {
     height: 21px;
     width: 20px;
     margin-right: 30px;
   }
+}
+
+.page-footer__links a:focus > svg,
+.page-footer__links a:hover > svg {
+  fill: $brown;
 }
 
 .page-footer__links:nth-child(2n) {

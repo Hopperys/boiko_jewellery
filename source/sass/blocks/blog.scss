@@ -43,7 +43,7 @@
 }
 
 .blog h2 {
-  margin-top: 114px;
+  margin-top: 116px;
   margin-left: 28px;
   text-align: center;
   letter-spacing: 0.03em;
@@ -69,6 +69,15 @@
   line-height: 21px;
   border-bottom: 1px solid $brown;
   font-weight: 500;
+
+  &:focus,
+  &:hover {
+    color: $brown;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 
   @media (max-width: $mobile) {
     display: inline-block;

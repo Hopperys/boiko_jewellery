@@ -78,6 +78,10 @@
     color: $grey;
   }
 
+  &:hover {
+    border-bottom: 1px solid $brown;
+  }
+
   @media (max-width: 1260px) {
     width: 300px;
   }
@@ -104,6 +108,16 @@
   margin-left: -13px;
   padding-bottom: 11px;
 
+  &:focus,
+  &:hover {
+    border-bottom: 1px solid $brown;
+    color: $brown;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+
   @media (max-width: 1260px) {
     margin-left: -4px;
   }
@@ -125,4 +139,9 @@
     width: 29px;
     height: 9px;
   }
+}
+
+.feedback button:focus > svg,
+.feedback button:hover > svg {
+  stroke: $brown;
 }

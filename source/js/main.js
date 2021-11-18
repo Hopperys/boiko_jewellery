@@ -120,7 +120,9 @@
 (function () {
   var loginButton = document.querySelector('.page-header__login');
   var popup = document.querySelector('.popup');
+  var popupForm = document.querySelector('.popup form');
   var closeButton = popup.querySelector('.popup__close');
+  var passwordInput = popup.querySelector('#password');
   var emailInput = popup.querySelector('#popupEmail');
 
   if (document.contains(loginButton && popup)) {
@@ -143,13 +145,41 @@
       }
     };
 
+    var isStorageSupport = true;
+    var storage = {};
+
+    try {
+      storage.mail = localStorage.getItem('mail');
+    } catch (err) {
+      isStorageSupport = false;
+    }
+
     loginButton.addEventListener('click', function (evt) {
       evt.preventDefault();
       popupClassToggle();
-      emailInput.focus();
+
+      if (storage) {
+        emailInput.value = storage.mail;
+        passwordInput.focus();
+      }
+
+      if (!storage) {
+        emailInput.focus();
+      }
 
       document.addEventListener('keydown', popupKeydownHandler);
       document.addEventListener('click', closeClickHandler);
+    });
+
+    popupForm.addEventListener('submit', function (evt) {
+      evt.preventDefault();
+
+      if (isStorageSupport) {
+        localStorage.setItem('mail', emailInput.value);
+      }
+
+      popupClassToggle();
+      popupForm.submit();
     });
 
     closeButton.addEventListener('click', function () {
@@ -160,12 +190,13 @@
 
 (function () {
   var filter = document.querySelector('.filter');
-  var filterButton = filter.querySelector('.filter__show');
-  var filterClose = filter.querySelector('.filter__close');
-  var submitButton = filter.querySelector('.filter__submit');
-  var filterForm = filter.querySelector('.filter form');
 
-  if (document.contains(filter && filterButton)) {
+  if (document.contains(filter)) {
+    var filterButton = filter.querySelector('.filter__show');
+    var filterClose = filter.querySelector('.filter__close');
+    var submitButton = filter.querySelector('.filter__submit');
+    var filterForm = filter.querySelector('.filter form');
+
     var popupKeydownHandler = function (evt) {
       if (evt.key === 'Escape' || evt.key === 'Esc') {
         filter.classList.remove('filter--opened');

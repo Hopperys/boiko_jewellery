@@ -2,8 +2,8 @@
   display: grid;
   grid-template-columns: 270px 270px 270px;
   grid-template-rows: auto auto auto auto;
-  row-gap: 40px;
-  column-gap: 25px;
+  row-gap: 23px;
+  column-gap: 29px;
   text-align: center;
 
   @media (max-width: 1255px) {
@@ -19,12 +19,22 @@
   @media (max-width: $mobile) {
     grid-template-columns: 130px 130px;
     grid-template-rows: auto auto auto auto auto auto;
+    row-gap: 13px;
   }
 }
 
 .shop__wrapper a {
   text-decoration: none;
   color: $dark;
+
+  &:focus,
+  &:hover {
+    color: $brown;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
 }
 
 .shop__wrapper img {
@@ -51,25 +61,51 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 21px;
+  margin-bottom: 4px;
+
+  @media (max-width: $mobile) {
+    margin-top: 10px;
+  }
 }
 
 .shop__wrapper p {
   font-weight: 700;
   font-size: 14px;
   line-height: 18px;
+  margin-top: 0;
+  margin-left: 5px;
 }
 
 .shop__pagination {
   display: flex;
   justify-content: space-between;
-  max-width: 870px;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  max-width: 880px;
+  margin-top: 54px;
+  margin-bottom: 75px;
+
+  @media (max-width: $tablet) {
+    margin-left: 43px;
+    margin-right: 43px;
+    margin-bottom: 73px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 27px;
+    margin-left: 64px;
+    margin-bottom: 64px;
+  }
 }
 
 .shop__pagination ul {
   @include list-reset;
   display: flex;
+  margin-left: -20px;
+  flex-wrap: wrap;
+
+  @media (max-width: $mobile) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .shop__pagination button {
@@ -81,6 +117,19 @@
   background-color: $white;
   border: none;
   cursor: pointer;
+
+  &:focus,
+  &:hover {
+    color: $brown;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
 }
 
 .shop__pagination a {
@@ -89,4 +138,21 @@
   font-weight: 500;
   line-height: 21px;
   margin-right: 15px;
+
+  @media (max-width: $mobile) {
+    margin-right: 23px;
+  }
+
+  &:focus,
+  &:hover {
+    color: $brown;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.shop__pagination li:first-of-type > a {
+  color: $dark;
 }
