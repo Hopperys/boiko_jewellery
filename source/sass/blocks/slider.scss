@@ -211,16 +211,12 @@
   stroke: $brown;
 }
 
-.slick-list {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
 .slider__pages {
   display: none;
 
   @media (max-width: $mobile) {
     display: inline-block;
+    vertical-align: middle;
     margin-top: 21px;
     font-size: 18px;
     font-weight: 500;

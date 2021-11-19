@@ -81,6 +81,7 @@
 
   @media (max-width: $tablet) {
     display: inline-block;
+    vertical-align: middle;
     grid-column: 1/2;
     grid-row: 1/2;
     width: 50px;
@@ -457,6 +458,7 @@
   max-height: 25px;
   max-width: 70px;
   display: inline-block;
+  vertical-align: middle;
   margin-left: 12px;
   margin-top: 10px;
 

@@ -6,6 +6,14 @@
   <title>Jewellery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preload" href="css/style.min.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="js/main.js" as="script" crossorigin="anonymous">
+  <link rel="preload" href="js/vendor.js" as="script" crossorigin="anonymous">
+  <link rel="preload" href="fonts/cormorantgaramond-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/cormorantgaramond-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/cormorantgaramond-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/poppins-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/poppins-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <!-- menu для отключения скрола в мобильном меню -->
@@ -91,7 +99,7 @@
           <div class="filter__item filter__item--opened filter__item--collection">
             <h3>Collection</h3>
             <label>
-              <input type="checkbox" name="pink flamingo" id="pink flamingo" checked>
+              <input type="checkbox" name="pinkFlamingo" id="pinkFlamingo" checked>
               <span>Pink flamingo</span>
             </label>
             <label>
@@ -105,8 +113,8 @@
               <div class="filter__scale">
                 <div class="filter__bar"></div>
               </div>
-              <div class="filter__toggle filter__toggle--min" tabindex="0" aria-label="Минимальная цена"></div>
-              <div class="filter__toggle filter__toggle--max" tabindex="0" aria-label="Максимальная цена"></div>
+              <div class="filter__toggle filter__toggle--min" tabindex="0"></div>
+              <div class="filter__toggle filter__toggle--max" tabindex="0"></div>
             </div>
             <div class="filter__range">
               <span>$ 55</span>
@@ -265,18 +273,21 @@
         </form>
       </section>
       <section class="page-footer__links">
+        <h2>Links</h2>
         <a href="#">Ordering & Payment</a>
         <a href="#">Terms & Conditions</a>
         <a href="#">Returns & Exchanges</a>
         <a href="#">Delivery</a>
       </section>
       <section class="page-footer__links">
+        <h2>Links</h2>
         <a href="#">About CH</a>
         <a href="#">Stores & Hours</a>
         <a href="#">Jobs</a>
         <a href="#">Contact Us</a>
       </section>
       <section class="page-footer__links">
+        <h2>Socials</h2>
         <a href="#">
           <svg width="8" height="15">
             <use xlink:href="img/sprite_auto.svg#icon-facebook"></use>
