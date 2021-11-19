@@ -1,4 +1,6 @@
 .page-main {
+  flex: 1 0 auto;
+
   &--catalog {
     display: flex;
     flex-direction: column;
@@ -158,6 +160,15 @@
     margin-left: 0;
     padding-top: 190px;
   }
+}
+
+.page-main--login h1 {
+  text-align: center;
+  color: $black;
+}
+
+.page-main--login a {
+  text-decoration: none;
 }
 
 .page-main__header p {
