@@ -39,6 +39,23 @@
       width: 270px;
     }
   }
+
+  @media (max-height: 500px) {
+    top: 0;
+  }
+
+  @media (max-height: 380px) {
+    height: 300px;
+    overflow-y: scroll;
+    top: 30px;
+  }
+
+  @media (max-height: 250px) {
+    height: 200px;
+    overflow-y: scroll;
+    top: 20px;
+  }
+
 }
 
 .popup img {
@@ -53,6 +70,10 @@
   @media (max-width: $mobile) {
     width: 270px;
     height: 84px;
+  }
+
+  @media (max-height: 500px) {
+    display: none;
   }
 }
 

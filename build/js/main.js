@@ -124,6 +124,7 @@
   var closeButton = popup.querySelector('.popup__close');
   var passwordInput = popup.querySelector('#password');
   var emailInput = popup.querySelector('#popupEmail');
+  var pageBody = document.querySelector('.page-body');
 
   if (document.contains(loginButton && popup)) {
     var popupClassToggle = function () {
@@ -134,6 +135,7 @@
     var popupKeydownHandler = function (evt) {
       if (evt.key === 'Escape' || evt.key === 'Esc') {
         popupClassToggle();
+        pageBody.classList.remove('page-body--popup');
         document.removeEventListener('keydown', popupKeydownHandler);
       }
     };
@@ -141,6 +143,7 @@
     var closeClickHandler = function (evt) {
       if (!popup.contains(evt.target) && evt.target !== loginButton && popup.classList.contains('popup--opened')) {
         popupClassToggle();
+        pageBody.classList.remove('page-body--popup');
         document.removeEventListener('click', closeClickHandler);
       }
     };
@@ -157,6 +160,7 @@
     loginButton.addEventListener('click', function (evt) {
       evt.preventDefault();
       popupClassToggle();
+      pageBody.classList.add('page-body--popup');
 
       if (storage) {
         emailInput.value = storage.mail;
@@ -179,6 +183,7 @@
       }
 
       popupClassToggle();
+      pageBody.classList.remove('page-body--popup');
       popupForm.submit();
     });
 
