@@ -1,3 +1,4 @@
+// Отключил проверку eslint'a ибо 10k строк библиотек править бессмысленно.
 /* eslint-disable */
 
 ( function( global, factory ) {
