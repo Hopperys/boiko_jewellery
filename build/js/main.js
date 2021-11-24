@@ -125,8 +125,9 @@
   var passwordInput = popup.querySelector('#password');
   var emailInput = popup.querySelector('#popupEmail');
   var pageBody = document.querySelector('.page-body');
+  var pageHeader = document.querySelector('.page-header');
 
-  if (document.contains(loginButton && popup)) {
+  if (document.contains(popup) && document.contains(loginButton)) {
     var popupClassToggle = function () {
       popup.classList.toggle('popup--opened');
       popup.classList.toggle('popup--closed');
@@ -136,6 +137,7 @@
       if (evt.key === 'Escape' || evt.key === 'Esc') {
         popupClassToggle();
         pageBody.classList.remove('page-body--popup');
+        pageHeader.classList.remove('page-header--popup');
         document.removeEventListener('keydown', popupKeydownHandler);
       }
     };
@@ -144,6 +146,7 @@
       if (!popup.contains(evt.target) && evt.target !== loginButton && popup.classList.contains('popup--opened')) {
         popupClassToggle();
         pageBody.classList.remove('page-body--popup');
+        pageHeader.classList.remove('page-header--popup');
         document.removeEventListener('click', closeClickHandler);
       }
     };
@@ -161,6 +164,7 @@
       evt.preventDefault();
       popupClassToggle();
       pageBody.classList.add('page-body--popup');
+      pageHeader.classList.add('page-header--popup');
 
       if (storage) {
         emailInput.value = storage.mail;
@@ -184,12 +188,17 @@
 
       popupClassToggle();
       pageBody.classList.remove('page-body--popup');
+      pageHeader.classList.remove('page-header--popup');
       popupForm.submit();
     });
 
-    closeButton.addEventListener('click', function () {
-      popupClassToggle();
-    });
+    if (popup.contains(closeButton)) {
+      closeButton.addEventListener('click', function () {
+        popupClassToggle();
+        pageBody.classList.remove('page-body--popup');
+        pageHeader.classList.remove('page-header--popup');
+      });
+    }
   }
 })();
 

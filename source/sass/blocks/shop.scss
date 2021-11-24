@@ -17,9 +17,17 @@
   }
 
   @media (max-width: $mobile) {
-    grid-template-columns: 130px 130px;
+    grid-template-columns: 206px 206px;
     grid-template-rows: auto auto auto auto auto auto;
     row-gap: 13px;
+  }
+
+  @media (max-width: 530px) {
+    grid-template-columns: 180px 180px;
+  }
+
+  @media (max-width: 450px) {
+    grid-template-columns: 130px 130px;
   }
 }
 
@@ -52,6 +60,16 @@
   }
 
   @media (max-width: $mobile) {
+    width: 206px;
+    height: 208px;
+  }
+
+  @media (max-width: 530px) {
+    width: 180px;
+    height: 186px;
+  }
+
+  @media (max-width: 450px) {
     width: 130px;
     height: 136px;
   }

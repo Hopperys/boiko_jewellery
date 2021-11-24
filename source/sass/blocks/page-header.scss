@@ -65,6 +65,10 @@
     }
   }
 
+  &--popup {
+    overflow-y: hidden;
+  }
+
   @media (max-width: $tablet) {
     &::before {
       display: none;

@@ -15,14 +15,19 @@ var svgstore = require("gulp-svgstore")
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
+var concat = require('gulp-concat');
 
 gulp.task("css", function () {
-  return gulp.src("source/sass/style.scss")
+  return gulp.src([
+    'node_modules/slick-carousel/slick/slick.scss',
+    'source/sass/style.scss',
+  ])
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
     .pipe(postcss([ autoprefixer() ]))
     .pipe(csso())
+    .pipe(concat("style.css"))
     .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/css"))
@@ -93,9 +98,18 @@ gulp.task("copy", function () {
   .pipe(gulp.dest("build"));
 });
 
+gulp.task("vendor", function () {
+  return gulp.src([
+    'node_modules/jquery/dist/jquery.js',
+    'node_modules/slick-carousel/slick/slick.js',
+  ])
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest('build/js'));
+});
+
 gulp.task("clean", function () {
   return del("build");
 });
 
-gulp.task("build", gulp.series("clean", "webp", "copy", "css", "sprite", "html"));
+gulp.task("build", gulp.series("clean", "webp", "copy", "css", "sprite", "html", "vendor"));
 gulp.task("start", gulp.series("build", "server"));
