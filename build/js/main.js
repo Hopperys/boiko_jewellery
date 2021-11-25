@@ -243,3 +243,47 @@
     });
   }
 })();
+
+(function () {
+  $(function () {
+    var SLIDES_TO_SHOW = 6;
+    var $slickElement = $('.slider__boxes');
+    $slickElement.on('afterChange', function (event, slick, currentSlide) {
+      var currentPage = Math.round((currentSlide + 1) / 2);
+      $('.slider__pages').text(currentPage + ' of ' + SLIDES_TO_SHOW);
+    });
+
+    $('.slider__boxes').slick({
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      prevArrow: $('.slider__left'),
+      nextArrow: $('.slider__right'),
+      dots: true,
+      dotsClass: 'said-dots',
+      swipe: false,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true,
+            swipe: true
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: false,
+            swipe: true,
+          }
+        },
+      ]
+    });
+  });
+})();
