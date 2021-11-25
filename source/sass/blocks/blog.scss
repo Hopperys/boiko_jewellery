@@ -209,7 +209,7 @@
 .blog__trends .blog__inner {
   position: absolute;
   background-color: $desert;
-  width: 285px;
+  width: 287px;
   right: 0;
   bottom: 0;
   text-align: center;
@@ -227,7 +227,7 @@
 .blog .blog__trends a {
   display: inline-block;
   vertical-align: middle;
-  margin-bottom: 90px;
+  margin-bottom: 109px;
 
   @media (max-width: $mobile) {
     margin-bottom: 70px;
@@ -283,7 +283,7 @@
 }
 
 .blog__trends p {
-  margin-top: 71px;
+  margin-top: 68px;
 
   @media (max-width: $tablet) {
     margin-top: 85px;

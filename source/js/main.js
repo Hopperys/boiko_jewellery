@@ -165,14 +165,14 @@
       popupClassToggle();
       pageBody.classList.add('page-body--popup');
       pageHeader.classList.add('page-header--popup');
+      emailInput.focus();
 
       if (storage) {
         emailInput.value = storage.mail;
-        passwordInput.focus();
       }
 
-      if (!storage) {
-        emailInput.focus();
+      if (emailInput.value !== '') {
+        passwordInput.focus();
       }
 
       document.addEventListener('keydown', popupKeydownHandler);

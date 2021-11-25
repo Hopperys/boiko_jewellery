@@ -47,7 +47,7 @@
     @media (max-width: $mobile) {
       padding-bottom: 50px;
       width: 100%;
-      grid-template-columns: 130px 156px 20px;
+      grid-template-columns: 40.62% 48.75% 6.25%;
     }
   }
 
@@ -170,7 +170,7 @@
 .page-header form {
   grid-row: 1/2;
   margin-top: 12px;
-  margin-left: 75px;
+  margin-left: 78px;
 }
 
 .page-header--closed form {
@@ -190,6 +190,7 @@
   @media (max-width: $mobile) {
     margin-top: 20px;
     margin-left: 0;
+    grid-column: 1/-1;
   }
 }
 
@@ -285,10 +286,12 @@
 .page-header--nojs input {
   @media (max-width: $tablet) {
     background-color: $brown-alpha;
-    width: 88.28%;
+    width: 93.8%;
     border-radius: 21px;
     height: 40px;
     padding-left: 40px;
+    margin-top: 25px;
+    margin-bottom: 13px;
 
     &::placeholder {
       opacity: 0;
@@ -300,11 +303,13 @@
   }
 
   @media (max-width: $mobile) {
-    width: 290px;
+    width: 95%;
     margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 0;
 
     &:hover {
-      margin-left: 25px;
+      margin-left: 15px;
     }
   }
 }
@@ -321,8 +326,8 @@
   @media (max-width: $tablet) {
     background-color: transparent;
     position: absolute;
-    margin-top: 12px;
-    margin-left: 10px;
+    margin-top: 36px;
+    margin-left: 7px;
 
     > svg {
       fill: $white;
@@ -331,14 +336,25 @@
 
   @media (max-width: $mobile) {
     margin-left: 20px;
+    margin-top: 20px;
   }
+}
+
+.page-header form > button:focus > svg,
+.page-header form > button:hover > svg {
+  fill: $dark;
+  opacity: 0.6;
+}
+
+.page-header form > button:active > svg {
+  opacity: 0.3;
 }
 
 .page-header .page-header__logo {
   grid-row: 1/2;
   width: 70px;
   height: 70px;
-  margin-left: -75px;
+  margin-left: -85px;
   margin-top: 0;
 
   @media (max-width: $tablet) {
@@ -424,18 +440,19 @@
     font-size: 24px;
     line-height: 36px;
     color: $white;
-    margin-left: 45px;
+    margin-left: 30px;
   }
 
   @media (max-width: $mobile) {
-    margin-left: 15px;
+    margin-left: 0;
   }
 }
 
 .page-header .page-header__cart {
   max-height: 25px;
-  margin-left: -16px;
+  margin-left: -30px;
   margin-top: 10px;
+  max-width: max-content;
 
   @media (max-width: $tablet) {
     width: 25px;
@@ -491,21 +508,26 @@
     line-height: 23px;
     margin-left: 45px;
     margin-bottom: 30px;
+    margin-top: 20px;
   }
 
   @media (max-width: $mobile) {
     margin-left: 15px;
+    margin-top: 10px;
   }
 }
 
 .page-header ul {
   @include list-reset;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: max-content max-content max-content max-content max-content;
+  grid-template-rows: min-content;
+  column-gap: 5px;
   grid-column: 1/-1;
   margin-top: 34px;
+  padding-left: 15px;
   position: relative;
-  width: 525px;
+  width: 555px;
   margin-left: auto;
   margin-right: auto;
   flex-wrap: wrap;
@@ -539,6 +561,11 @@
 .page-header--nojs ul:last-of-type {
   @media (max-width: $tablet) {
     display: flex;
+    margin-top: 20px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 5px;
   }
 }
 
@@ -555,11 +582,15 @@
   @media (max-width: $tablet) {
     margin-bottom: 20px;
   }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 22px;
+  }
 }
 
 .page-header--opened ul:last-of-type > li,
 .page-header--nojs ul:last-of-type > li {
   @media (max-width: $tablet) {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 }

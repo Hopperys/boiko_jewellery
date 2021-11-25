@@ -69,8 +69,26 @@
     item.classList.toggle('filter__item--closed');
   };
 
+
+  var focusItemsToggle = function (item) {
+    item.addEventListener('focus', function (focusEvent) {
+      var isSpaceEvent = function (evt) {
+        if (evt.code === 'Space') {
+          toggleClass(item);
+        }
+        document.removeEventListener('keydown', isSpaceEvent);
+      };
+
+      if (focusEvent.target.id === item) {
+        document.addEventListener('keydown', isSpaceEvent);
+      }
+    });
+  };
+
+
   if (document.contains(collection)) {
     toggleClass(collection);
+    focusItemsToggle(collection);
 
     collection.addEventListener('click', function () {
       toggleClass(collection);
@@ -79,6 +97,7 @@
 
   if (document.contains(material)) {
     toggleClass(material);
+    focusItemsToggle(material);
 
     material.addEventListener('click', function () {
       toggleClass(material);
@@ -86,12 +105,16 @@
   }
 
   if (document.contains(product)) {
+    focusItemsToggle(product);
+
     product.addEventListener('click', function () {
       toggleClass(product);
     });
   }
 
   if (document.contains(price)) {
+    focusItemsToggle(price);
+
     price.addEventListener('click', function () {
       toggleClass(price);
     });
@@ -165,14 +188,14 @@
       popupClassToggle();
       pageBody.classList.add('page-body--popup');
       pageHeader.classList.add('page-header--popup');
+      emailInput.focus();
 
       if (storage) {
         emailInput.value = storage.mail;
-        passwordInput.focus();
       }
 
-      if (!storage) {
-        emailInput.focus();
+      if (emailInput.value !== '') {
+        passwordInput.focus();
       }
 
       document.addEventListener('keydown', popupKeydownHandler);

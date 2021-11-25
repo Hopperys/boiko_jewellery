@@ -31,7 +31,7 @@
         <input type="search" name="search" id="search" placeholder="Type here to search">
       </label>
     </form>
-    <a href="main.html" class="page-header__logo" aria-label="site logo">
+    <a href="main.html" class="page-header__logo">
       <svg width="66" height="66">
         <use xlink:href="img/sprite_auto.svg#icon-logo"></use>
       </svg>
@@ -67,48 +67,48 @@
         <section class="filter">
           <button class="filter__show" type="button">Filter</button>
           <form action="https://echo.htmlacademy.ru/" method="POST" target="_blank">
-            <div class="filter__item filter__item--opened filter__item--product">
+            <div class="filter__item filter__item--opened filter__item--product" id="product" tabindex="0">
               <h3>Product</h3>
-              <label>
+              <label tabindex="0">
                 <input type="checkbox" name="neckless" id="neckless" checked="">
                 <span>Necklaces</span>
               </label>
-              <label>
+              <label tabindex="0">
                 <input type="checkbox" name="chocker" id="chocker" checked="">
                 <span>Chocker</span>
               </label>
-              <label>
+              <label tabindex="0">
                 <input type="checkbox" name="rings" id="rings">
                 <span>Rings</span>
               </label>
-              <label>
+              <label tabindex="0">
                 <input type="checkbox" name="earrings" id="earring" checked="">
                 <span>Earrings</span>
               </label>
             </div>
-            <div class="filter__item filter__item--opened filter__item--material">
+            <div class="filter__item filter__item--opened filter__item--material" id="material" tabindex="0">
               <h3>Material</h3>
-              <label>
+              <label tabindex="0">
                 <input type="checkbox" name="gold" id="gold" checked="">
                 <span>Gold</span>
               </label>
-              <label>
+              <label tabindex="0">
                 <input type="checkbox" name="silver" id="silver">
                 <span>Silver</span>
               </label>
             </div>
-            <div class="filter__item filter__item--opened filter__item--collection">
+            <div class="filter__item filter__item--opened filter__item--collection" id="collection" tabindex="0">
               <h3>Collection</h3>
-              <label>
+              <label tabindex="0">
                 <input type="checkbox" name="pinkFlamingo" id="pinkFlamingo" checked="">
                 <span>Pink flamingo</span>
               </label>
-              <label>
+              <label tabindex="0">
                 <input type="checkbox" name="dreams" id="dreams">
                 <span>Dreams</span>
               </label>
             </div>
-            <div class="filter__item filter__item--opened filter__item--price">
+            <div class="filter__item filter__item--opened filter__item--price" id="price" tabindex="0">
               <h3>Price</h3>
               <div class="filter__controls">
                 <div class="filter__scale">
@@ -346,6 +346,7 @@
     </button>
   </section>
 
+  <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

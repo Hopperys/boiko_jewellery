@@ -1,10 +1,5 @@
 .gallery__header {
   text-align: center;
-  margin-left: 22px;
-
-  @media (max-width: $tablet) {
-    margin-left: 0;
-  }
 }
 
 .gallery__header h2 {

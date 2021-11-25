@@ -6,7 +6,7 @@
   column-gap: 29px;
   text-align: center;
 
-  @media (max-width: 1255px) {
+  @media (max-width: 1285px) {
     grid-template-columns: 200px 200px 200px;
   }
 
@@ -49,7 +49,7 @@
   width: 270px;
   height: 272px;
 
-  @media (max-width: 1255px) {
+  @media (max-width: 1285px) {
     width: 200px;
     height: 202px;
   }
