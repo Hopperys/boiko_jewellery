@@ -23,6 +23,33 @@
     margin-left: 50%;
     margin-right: -50%;
     transform: translateX(-50%);
+    z-index: 1;
+
+    @media (max-height: 910px) {
+      top: 50px;
+    }
+
+    @media (max-height: 740px) {
+      max-height: 500px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+
+    @media (max-height: 540px) {
+      height: 400px;
+    }
+
+    @media (max-height: 430px) {
+      height: 300px;
+    }
+
+    @media (max-height: 330px) {
+      height: 200px;
+    }
+
+    @media (max-height: 260px) {
+      top: 0;
+    }
   }
 
   @media (max-width: $mobile) {
@@ -169,6 +196,7 @@
   line-height: 18px;
   margin-bottom: 15px;
   cursor: pointer;
+  max-width: max-content;
 
   @media (max-width: $tablet) {
     font-size: 16px;
@@ -262,6 +290,7 @@
 .filter__submit {
   width: 250px;
   height: 68px;
+  min-height: 68px;
   background-color: $brown;
   color: $white;
   font-weight: 500;
@@ -295,6 +324,7 @@
 .filter__clear {
   width: 250px;
   height: 68px;
+  min-height: 68px;
   background-color: $white;
   border: 1px solid $brown;
   box-sizing: border-box;
@@ -319,6 +349,7 @@
   @media (max-width: $tablet) {
     width: 362px;
     margin-left: 30px;
+    margin-bottom: 30px;
   }
 
   @media (max-width: $mobile) {
@@ -333,14 +364,20 @@
   @media (max-width: $tablet) {
     display: block;
     position: absolute;
+    background-color: $dark;
     right: -16px;
     top: -16px;
-    background-color: $dark;
     width: 32px;
     height: 32px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
+    z-index: 10;
+
+    @media (max-height: 740px) {
+      right: 0;
+      top: 0;
+    }
   }
 }
 

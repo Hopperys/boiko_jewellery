@@ -8,6 +8,7 @@
   margin-right: 5%;
 
   @media (max-width: $mobile) {
-    margin-right: 0;
+    margin-right: auto;
+    margin-left: auto;
   }
 }

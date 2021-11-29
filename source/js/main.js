@@ -24,6 +24,30 @@
       item.classList.toggle('faq__item--closed');
     };
 
+    var item;
+    var item1;
+    var item2;
+    var item3;
+
+    var spaceKeydownHandler = function (evt) {
+      if (evt.code === 'Space') {
+        evt.preventDefault();
+        toggleItems(item);
+
+        if (item1.classList.contains('faq__item--opened')) {
+          toggleItems(item1);
+        }
+
+        if (item3.classList.contains('faq__item--opened')) {
+          toggleItems(item3);
+        }
+
+        if (item2.classList.contains('faq__item--opened')) {
+          toggleItems(item2);
+        }
+      }
+    };
+
     if (document.contains(delivery) && document.contains(payment) && document.contains(refund)) {
       hideItems(delivery, payment, refund);
     }
@@ -33,12 +57,36 @@
         hideItems(payment, delivery, refund);
         toggleItems(materials);
       });
+
+      materials.addEventListener('focus', function () {
+        item = materials;
+        item1 = delivery;
+        item2 = payment;
+        item3 = refund;
+        document.addEventListener('keydown', spaceKeydownHandler);
+      });
+
+      materials.addEventListener('focusout', function () {
+        document.removeEventListener('keydown', spaceKeydownHandler);
+      });
     }
 
     if (document.contains(delivery)) {
       delivery.addEventListener('click', function () {
         hideItems(materials, payment, refund);
         toggleItems(delivery);
+      });
+
+      delivery.addEventListener('focus', function () {
+        item = delivery;
+        item1 = materials;
+        item2 = payment;
+        item3 = refund;
+        document.addEventListener('keydown', spaceKeydownHandler);
+      });
+
+      delivery.addEventListener('focusout', function () {
+        document.removeEventListener('keydown', spaceKeydownHandler);
       });
     }
 
@@ -47,12 +95,36 @@
         hideItems(materials, delivery, refund);
         toggleItems(payment);
       });
+
+      payment.addEventListener('focus', function () {
+        item = payment;
+        item1 = materials;
+        item2 = delivery;
+        item3 = refund;
+        document.addEventListener('keydown', spaceKeydownHandler);
+      });
+
+      payment.addEventListener('focusout', function () {
+        document.removeEventListener('keydown', spaceKeydownHandler);
+      });
     }
 
     if (document.contains(refund)) {
       refund.addEventListener('click', function () {
         hideItems(materials, delivery, payment);
         toggleItems(refund);
+      });
+
+      refund.addEventListener('focus', function () {
+        item = refund;
+        item1 = materials;
+        item2 = delivery;
+        item3 = payment;
+        document.addEventListener('keydown', spaceKeydownHandler);
+      });
+
+      refund.addEventListener('focusout', function () {
+        document.removeEventListener('keydown', spaceKeydownHandler);
       });
     }
   }
@@ -69,11 +141,29 @@
     item.classList.toggle('filter__item--closed');
   };
 
+  var item;
+
+  var keydownHandler = function (evt) {
+    if (evt.code === 'Space') {
+      evt.preventDefault();
+      toggleClass(item);
+    }
+  };
+
   if (document.contains(collection)) {
     toggleClass(collection);
 
     collection.addEventListener('click', function () {
       toggleClass(collection);
+    });
+
+    collection.addEventListener('focus', function () {
+      item = collection;
+      document.addEventListener('keydown', keydownHandler);
+    });
+
+    collection.addEventListener('focusout', function () {
+      document.removeEventListener('keydown', keydownHandler);
     });
   }
 
@@ -83,17 +173,44 @@
     material.addEventListener('click', function () {
       toggleClass(material);
     });
+
+    material.addEventListener('focus', function () {
+      item = material;
+      document.addEventListener('keydown', keydownHandler);
+    });
+
+    material.addEventListener('focusout', function () {
+      document.removeEventListener('keydown', keydownHandler);
+    });
   }
 
   if (document.contains(product)) {
     product.addEventListener('click', function () {
       toggleClass(product);
     });
+
+    product.addEventListener('focus', function () {
+      item = product;
+      document.addEventListener('keydown', keydownHandler);
+    });
+
+    product.addEventListener('focusout', function () {
+      document.removeEventListener('keydown', keydownHandler);
+    });
   }
 
   if (document.contains(price)) {
     price.addEventListener('click', function () {
       toggleClass(price);
+    });
+
+    price.addEventListener('focus', function () {
+      item = price;
+      document.addEventListener('keydown', keydownHandler);
+    });
+
+    price.addEventListener('focusout', function () {
+      document.removeEventListener('keydown', keydownHandler);
     });
   }
 })();
@@ -206,6 +323,7 @@
   var filter = document.querySelector('.filter');
 
   if (document.contains(filter)) {
+    var body = document.body;
     var filterButton = filter.querySelector('.filter__show');
     var filterClose = filter.querySelector('.filter__close');
     var submitButton = filter.querySelector('.filter__submit');
@@ -214,6 +332,8 @@
     var popupKeydownHandler = function (evt) {
       if (evt.key === 'Escape' || evt.key === 'Esc') {
         filter.classList.remove('filter--opened');
+        filterClose.classList.remove('filter__close--opened');
+        body.classList.remove('page-body--popup');
         document.removeEventListener('keydown', popupKeydownHandler);
       }
     };
@@ -221,12 +341,16 @@
     var closeClickHandler = function (evt) {
       if (!filter.contains(evt.target) && evt.target !== filterButton && filter.classList.contains('filter--opened')) {
         filter.classList.remove('filter--opened');
+        body.classList.remove('page-body--popup');
+        filterClose.classList.remove('filter__close--opened');
         document.removeEventListener('click', closeClickHandler);
       }
     };
 
     filterButton.addEventListener('click', function () {
       filter.classList.add('filter--opened');
+      body.classList.add('page-body--popup');
+      filterClose.classList.add('filter__close--opened');
 
       document.addEventListener('keydown', popupKeydownHandler);
       document.addEventListener('click', closeClickHandler);
@@ -234,10 +358,14 @@
 
     filterClose.addEventListener('click', function () {
       filter.classList.remove('filter--opened');
+      filterClose.classList.remove('filter__close--opened');
+      body.classList.remove('page-body--popup');
     });
 
     submitButton.addEventListener('click', function (evt) {
       evt.preventDefault();
+      filterClose.classList.remove('filter__close--opened');
+      body.classList.remove('page-body--popup');
       filter.classList.remove('filter--opened');
       filterForm.submit();
     });

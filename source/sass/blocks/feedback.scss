@@ -57,9 +57,14 @@
 
 .feedback form {
   @media (max-width: $mobile) {
+    max-width: 700px;
+    margin-left: 15px;
+    margin-right: 10%;
+  }
+
+  @media (max-width: 321px) {
     max-width: 290px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-right: 0;
   }
 }
 
@@ -69,6 +74,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
+  border-radius: 0;
   font-family: "Poppins", "Arial", "Helvetica", sans-serif;
   background-color: transparent;
   width: 400px;
@@ -92,7 +98,15 @@
   }
 
   @media (max-width: $mobile) {
-    width: 62%;
+    width: 70%;
+  }
+
+  @media (max-width: 422px) {
+    width: 60%;
+  }
+
+  @media (max-width: 321px) {
+    width: 60%;
   }
 }
 
