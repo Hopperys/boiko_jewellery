@@ -9,6 +9,7 @@
   right: -50%;
   transform: translateX(-50%);
   z-index: 10;
+  overflow-x: hidden;
 
   &--closed {
     display: none;

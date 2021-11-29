@@ -67,49 +67,55 @@
         <section class="filter">
           <button class="filter__show" type="button">Filter</button>
           <form action="https://echo.htmlacademy.ru/" method="POST" target="_blank">
-            <div class="filter__item filter__item--opened filter__item--product" id="product" tabindex="0">
-              <h3>Product</h3>
-              <label tabindex="0">
-                <input type="checkbox" name="neckless" id="neckless" checked="">
-                <span>Necklaces</span>
-              </label>
-              <label tabindex="0">
-                <input type="checkbox" name="chocker" id="chocker" checked="">
-                <span>Chocker</span>
-              </label>
-              <label tabindex="0">
-                <input type="checkbox" name="rings" id="rings">
-                <span>Rings</span>
-              </label>
-              <label tabindex="0">
-                <input type="checkbox" name="earrings" id="earring" checked="">
-                <span>Earrings</span>
-              </label>
+            <div class="filter__item filter__item--opened filter__item--product" id="product">
+              <h3 tabindex="0">Product</h3>
+              <ul>
+                <li>
+                  <input type="checkbox" name="neckless" id="neckless" checked="">
+                  <label for="neckless">Necklaces</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="chocker" id="chocker" checked="">
+                  <label for="chocker">Chocker</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="rings" id="rings">
+                  <label for="rings">Rings</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="earrings" id="earring" checked="">
+                  <label for="earring">Earrings</label>
+                </li>
+              </ul>
             </div>
-            <div class="filter__item filter__item--opened filter__item--material" id="material" tabindex="0">
-              <h3>Material</h3>
-              <label tabindex="0">
-                <input type="checkbox" name="gold" id="gold" checked="">
-                <span>Gold</span>
-              </label>
-              <label tabindex="0">
-                <input type="checkbox" name="silver" id="silver">
-                <span>Silver</span>
-              </label>
+            <div class="filter__item filter__item--opened filter__item--material" id="material">
+              <h3 tabindex="0">Material</h3>
+              <ul>
+                <li>
+                  <input type="checkbox" name="gold" id="gold" checked="">
+                  <label for="gold">Gold</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="silver" id="silver">
+                  <label for="silver">Silver</label>
+                </li>
+              </ul>
             </div>
-            <div class="filter__item filter__item--opened filter__item--collection" id="collection" tabindex="0">
-              <h3>Collection</h3>
-              <label tabindex="0">
-                <input type="checkbox" name="pinkFlamingo" id="pinkFlamingo" checked="">
-                <span>Pink flamingo</span>
-              </label>
-              <label tabindex="0">
-                <input type="checkbox" name="dreams" id="dreams">
-                <span>Dreams</span>
-              </label>
+            <div class="filter__item filter__item--opened filter__item--collection" id="collection">
+              <h3 tabindex="0">Collection</h3>
+              <ul>
+                <li>
+                  <input type="checkbox" name="pinkFlamingo" id="pinkFlamingo" checked="">
+                  <label for="pinkFlamingo">Pink flamingo</label>
+                </li>
+                <li>
+                  <input type="checkbox" name="dreams" id="dreams">
+                  <label for="dreams">Dreams</label>
+                </li>
+              </ul>
             </div>
-            <div class="filter__item filter__item--opened filter__item--price" id="price" tabindex="0">
-              <h3>Price</h3>
+            <div class="filter__item filter__item--opened filter__item--price" id="price">
+              <h3 tabindex="0">Price</h3>
               <div class="filter__controls">
                 <div class="filter__scale">
                   <div class="filter__bar"></div>

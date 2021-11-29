@@ -132,9 +132,21 @@
 
 (function () {
   var collection = document.querySelector('.filter__item--collection');
+  var collectionHeader = collection.querySelector('h3');
   var material = document.querySelector('.filter__item--material');
+  var materialHeader = material.querySelector('h3');
   var product = document.querySelector('.filter__item--product');
+  var productHeader = product.querySelector('h3');
   var price = document.querySelector('.filter__item--price');
+  var priceHeader = price.querySelector('h3');
+  var pinkFlamingo = document.querySelector('#pinkFlamingo');
+  var dreams = document.querySelector('#dreams');
+  var gold = document.querySelector('#gold');
+  var silver = document.querySelector('#silver');
+  var earring = document.querySelector('#earring');
+  var rings = document.querySelector('#rings');
+  var chocker = document.querySelector('#chocker');
+  var neckless = document.querySelector('#neckless');
 
   var toggleClass = function (item) {
     item.classList.toggle('filter__item--opened');
@@ -142,11 +154,24 @@
   };
 
   var item;
+  var $seconditem;
 
   var keydownHandler = function (evt) {
     if (evt.code === 'Space') {
       evt.preventDefault();
       toggleClass(item);
+    }
+  };
+
+  var checkboxSwitcher = function (evt) {
+    if (evt.code === 'Space') {
+      evt.preventDefault();
+
+      if ($seconditem.prop('checked') === false) {
+        $seconditem.prop('checked', true);
+      } else {
+        $seconditem.prop('checked', false);
+      }
     }
   };
 
@@ -157,13 +182,35 @@
       toggleClass(collection);
     });
 
-    collection.addEventListener('focus', function () {
+    collectionHeader.addEventListener('focus', function () {
       item = collection;
       document.addEventListener('keydown', keydownHandler);
+      collection.classList.add('filter__item--focus');
     });
 
-    collection.addEventListener('focusout', function () {
+    pinkFlamingo.addEventListener('focus', function () {
       document.removeEventListener('keydown', keydownHandler);
+      $seconditem = $('#pinkFlamingo');
+      document.addEventListener('keydown', checkboxSwitcher);
+    });
+
+    pinkFlamingo.addEventListener('focusout', function () {
+      document.removeEventListener('keydown', checkboxSwitcher);
+    });
+
+    dreams.addEventListener('focus', function () {
+      document.removeEventListener('keydown', keydownHandler);
+      $seconditem = $('#dreams');
+      document.addEventListener('keydown', checkboxSwitcher);
+    });
+
+    dreams.addEventListener('focusout', function () {
+      document.removeEventListener('keydown', checkboxSwitcher);
+    });
+
+    collectionHeader.addEventListener('focusout', function () {
+      document.removeEventListener('keydown', keydownHandler);
+      collection.classList.remove('filter__item--focus');
     });
   }
 
@@ -174,13 +221,35 @@
       toggleClass(material);
     });
 
-    material.addEventListener('focus', function () {
+    materialHeader.addEventListener('focus', function () {
       item = material;
+      material.classList.add('filter__item--focus');
       document.addEventListener('keydown', keydownHandler);
+    });
+
+    gold.addEventListener('focus', function () {
+      document.removeEventListener('keydown', keydownHandler);
+      $seconditem = $('#gold');
+      document.addEventListener('keydown', checkboxSwitcher);
+    });
+
+    gold.addEventListener('focusout', function () {
+      document.removeEventListener('keydown', checkboxSwitcher);
+    });
+
+    silver.addEventListener('focus', function () {
+      document.removeEventListener('keydown', keydownHandler);
+      $seconditem = $('#silver');
+      document.addEventListener('keydown', checkboxSwitcher);
+    });
+
+    silver.addEventListener('focusout', function () {
+      document.removeEventListener('keydown', checkboxSwitcher);
     });
 
     material.addEventListener('focusout', function () {
       document.removeEventListener('keydown', keydownHandler);
+      material.classList.remove('filter__item--focus');
     });
   }
 
@@ -189,13 +258,55 @@
       toggleClass(product);
     });
 
-    product.addEventListener('focus', function () {
+    productHeader.addEventListener('focus', function () {
       item = product;
+      product.classList.add('filter__item--focus');
       document.addEventListener('keydown', keydownHandler);
+    });
+
+    earring.addEventListener('focus', function () {
+      document.removeEventListener('keydown', keydownHandler);
+      $seconditem = $('#earring');
+      document.addEventListener('keydown', checkboxSwitcher);
+    });
+
+    earring.addEventListener('focusout', function () {
+      document.removeEventListener('keydown', checkboxSwitcher);
+    });
+
+    rings.addEventListener('focus', function () {
+      document.removeEventListener('keydown', keydownHandler);
+      $seconditem = $('#rings');
+      document.addEventListener('keydown', checkboxSwitcher);
+    });
+
+    rings.addEventListener('focusout', function () {
+      document.removeEventListener('keydown', checkboxSwitcher);
+    });
+
+    chocker.addEventListener('focus', function () {
+      document.removeEventListener('keydown', keydownHandler);
+      $seconditem = $('#chocker');
+      document.addEventListener('keydown', checkboxSwitcher);
+    });
+
+    chocker.addEventListener('focusout', function () {
+      document.removeEventListener('keydown', checkboxSwitcher);
+    });
+
+    neckless.addEventListener('focus', function () {
+      document.removeEventListener('keydown', keydownHandler);
+      $seconditem = $('#neckless');
+      document.addEventListener('keydown', checkboxSwitcher);
+    });
+
+    neckless.addEventListener('focusout', function () {
+      document.removeEventListener('keydown', checkboxSwitcher);
     });
 
     product.addEventListener('focusout', function () {
       document.removeEventListener('keydown', keydownHandler);
+      product.classList.remove('filter__item--focus');
     });
   }
 
@@ -204,12 +315,14 @@
       toggleClass(price);
     });
 
-    price.addEventListener('focus', function () {
+    priceHeader.addEventListener('focus', function () {
       item = price;
+      price.classList.add('filter__item--focus');
       document.addEventListener('keydown', keydownHandler);
     });
 
     price.addEventListener('focusout', function () {
+      price.classList.remove('filter__item--focus');
       document.removeEventListener('keydown', keydownHandler);
     });
   }

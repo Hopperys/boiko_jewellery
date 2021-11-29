@@ -127,6 +127,10 @@
       background: url("../img/down.svg") no-repeat;
     }
   }
+
+  &--focus {
+    border: 1px solid $black;
+  }
 }
 
 .filter--opened .filter__item {
@@ -142,6 +146,10 @@
 }
 
 .filter__item--closed label {
+  display: none;
+}
+
+.filter__item--closed input {
   display: none;
 }
 
@@ -162,9 +170,13 @@
     line-height: 23px;
   }
 
-  &:hover,
+  &:hover {
+    color: $brown;
+  }
+
   &:focus {
     color: $brown;
+    outline: none;
   }
 
   &:active {
@@ -189,6 +201,15 @@
   margin-bottom: 25px;
 }
 
+.filter__item ul {
+  @include list-reset;
+}
+
+.filter__item li {
+  display: flex;
+  flex-direction: row;
+}
+
 .filter__item label {
   margin-left: 60px;
   font-weight: 500;
@@ -205,13 +226,21 @@
 }
 
 .filter__item input {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
-.filter__item input:checked ~ span {
+.filter__item input:checked + label {
   position: relative;
 
-  &::after {
+  &::before {
     content: "";
     position: absolute;
     width: 15px;
@@ -222,10 +251,10 @@
   }
 }
 
-.filter__item input ~ span {
+.filter__item input + label {
   position: relative;
 
-  &::after {
+  &::before {
     content: "";
     position: absolute;
     width: 15px;
@@ -244,6 +273,10 @@
   &:active {
     opacity: 0.7;
   }
+}
+
+.filter__item input:focus + label {
+  color: $brown;
 }
 
 .filter__controls {

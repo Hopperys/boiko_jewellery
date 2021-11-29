@@ -56,6 +56,15 @@
   text-align: center;
   color: $dark;
   margin-left: 0;
+  max-width: 270px;
+
+  @media (max-width: 1240px) {
+    max-width: 220px;
+  }
+
+  @media (max-width: 1170px) {
+    max-width: 200px;
+  }
 
   &:focus,
   &:hover {
@@ -94,7 +103,7 @@
 }
 
 .slider__boxes {
-  margin-left: 15px;
+  margin-left: 0;
 
   @media (max-width: $tablet) {
     margin-left: -20px;
@@ -124,10 +133,10 @@
   font-size: 16px;
   line-height: 21px;
   margin-bottom: 0;
-  margin-left: -30px;
 
   @media (max-width: $tablet) {
     margin-left: 0;
+    margin-right: 0;
   }
 
   @media (max-width: $mobile) {
@@ -152,10 +161,10 @@
   font-size: 14px;
   line-height: 18px;
   margin-top: 6px;
-  margin-left: -35px;
 
   @media (max-width: $tablet) {
     margin-left: 0;
+    margin-right: 0;
   }
 
   @media (max-width: $mobile) {
