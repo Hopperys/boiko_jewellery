@@ -367,30 +367,32 @@
 
   <!-- closed для закрытого состояния, opened для открытого -->
   <section class="popup popup--closed">
-    <picture>
-      <!-- 1x: 430x138, 2x: 860x276 -->
-      <img src="img/popup.jpg" width="430" height="138" alt="popup picture">
-    </picture>
-    <h2>Log In</h2>
-    <form action="https://echo.htmlacademy.ru/" method="POST" target="_blank">
-      <label>
-        <input type="email" id="popupEmail" name="popupEmail" placeholder="Your E-mail" required>
-      </label>
-      <label>
-        <input type="password" name="password" id="password" placeholder="Password" required>
-      </label>
-      <a href="#">Forgot your password?</a>
-      <button type="submit">Log In</button>
-    </form>
-    <div class="popup__inner">
-      <p>Don’t have an account?</p>
-      <a href="#">Sign up</a>
+    <div class="popup__wrapper">
+      <picture>
+        <!-- 1x: 430x138, 2x: 860x276 -->
+        <img src="img/popup.jpg" width="430" height="138" alt="popup picture">
+      </picture>
+      <h2>Log In</h2>
+      <form action="https://echo.htmlacademy.ru/" method="POST" target="_blank">
+        <label>
+          <input type="email" id="popupEmail" name="popupEmail" placeholder="Your E-mail" required>
+        </label>
+        <label>
+          <input type="password" name="password" id="password" placeholder="Password" required>
+        </label>
+        <a href="#">Forgot your password?</a>
+        <button type="submit">Log In</button>
+      </form>
+      <div class="popup__inner">
+        <p>Don’t have an account?</p>
+        <a href="#">Sign up</a>
+      </div>
+      <button class="popup__close" type="button" aria-label="close">
+        <svg width="14" height="14">
+          <use xlink:href="img/sprite_auto.svg#icon-cross"></use>
+        </svg>
+      </button>
     </div>
-    <button class="popup__close" type="button" aria-label="close">
-      <svg width="14" height="14">
-        <use xlink:href="img/sprite_auto.svg#icon-cross"></use>
-      </svg>
-    </button>
   </section>
 
   <script src="js/vendor.js"></script>

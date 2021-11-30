@@ -1,4 +1,21 @@
 .popup {
+  &--closed {
+    display: none;
+  }
+
+  &--opened {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $white;
+    z-index: 101;
+  }
+}
+
+.popup__wrapper {
   display: flex;
   flex-direction: column;
   width: 430px;
@@ -8,16 +25,9 @@
   left: 50%;
   right: -50%;
   transform: translateX(-50%);
-  z-index: 10;
+  z-index: 1100;
   overflow-x: hidden;
-
-  &--closed {
-    display: none;
-  }
-
-  &--opened {
-    display: flex;
-  }
+  pointer-events: all;
 
   @media (max-width: $tablet) {
     width: 442px;

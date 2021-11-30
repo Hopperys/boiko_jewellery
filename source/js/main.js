@@ -132,13 +132,9 @@
 
 (function () {
   var collection = document.querySelector('.filter__item--collection');
-  var collectionHeader = collection.querySelector('h3');
   var material = document.querySelector('.filter__item--material');
-  var materialHeader = material.querySelector('h3');
   var product = document.querySelector('.filter__item--product');
-  var productHeader = product.querySelector('h3');
   var price = document.querySelector('.filter__item--price');
-  var priceHeader = price.querySelector('h3');
   var pinkFlamingo = document.querySelector('#pinkFlamingo');
   var dreams = document.querySelector('#dreams');
   var gold = document.querySelector('#gold');
@@ -176,6 +172,7 @@
   };
 
   if (document.contains(collection)) {
+    var collectionHeader = collection.querySelector('h3');
     toggleClass(collection);
 
     collection.addEventListener('click', function () {
@@ -215,6 +212,7 @@
   }
 
   if (document.contains(material)) {
+    var materialHeader = material.querySelector('h3');
     toggleClass(material);
 
     material.addEventListener('click', function () {
@@ -254,6 +252,7 @@
   }
 
   if (document.contains(product)) {
+    var productHeader = product.querySelector('h3');
     product.addEventListener('click', function () {
       toggleClass(product);
     });
@@ -311,6 +310,7 @@
   }
 
   if (document.contains(price)) {
+    var priceHeader = price.querySelector('h3');
     price.addEventListener('click', function () {
       toggleClass(price);
     });
@@ -390,11 +390,26 @@
       isStorageSupport = false;
     }
 
-    loginButton.addEventListener('click', function (evt) {
-      evt.preventDefault();
+    loginButton.addEventListener('click', function (event) {
+      event.preventDefault();
       popupClassToggle();
       pageBody.classList.add('page-body--popup');
       pageHeader.classList.add('page-header--popup');
+
+      var focusHolder = function (evt) {
+        if (evt.shiftKey && evt.key === 'Tab') {
+          evt.preventDefault();
+        }
+      };
+
+      emailInput.addEventListener('focus', function () {
+        document.addEventListener('keydown', focusHolder);
+      });
+
+      emailInput.addEventListener('focusout', function () {
+        document.removeEventListener('keydown', focusHolder);
+      });
+
       emailInput.focus();
 
       if (storage) {

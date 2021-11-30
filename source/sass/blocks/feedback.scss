@@ -57,14 +57,26 @@
 
 .feedback form {
   @media (max-width: $mobile) {
-    max-width: 700px;
+    max-width: 100%;
+    width: 85%;
     margin-left: 15px;
-    margin-right: 10%;
+    display: flex;
   }
 
   @media (max-width: 321px) {
-    max-width: 290px;
+    max-width: 300px;
+    width: 90%;
     margin-right: 0;
+  }
+}
+
+.feedback label {
+  @media (max-width: $mobile) {
+    max-width: 100%;
+  }
+
+  @media (max-width: 400px) {
+    max-width: 60%;
   }
 }
 
@@ -98,15 +110,19 @@
   }
 
   @media (max-width: $mobile) {
-    width: 70%;
+    width: 50vw;
+  }
+
+  @media (max-width: 460px) {
+    width: 50vw;
   }
 
   @media (max-width: 422px) {
-    width: 60%;
+    width: 45vw;
   }
 
   @media (max-width: 321px) {
-    width: 60%;
+    width: 100%;
   }
 }
 
@@ -138,11 +154,12 @@
   }
 
   @media (max-width: $tablet) {
-    margin-left: -10px;
+    margin-left: -4px;
   }
 
   @media (max-width: $mobile) {
-    margin-left: -5px;
+    margin-left: 0;
+    height: 34px;
   }
 }
 
